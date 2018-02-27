@@ -9,7 +9,6 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, "Views"));
 
 app.all("*", (req, res) =>{
-  console.log(req.path)
   req.next()
 })
 
@@ -18,8 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('*',(req, res) => {
-  console.log(req.path.substring(1,req.path.length))
-  checkDate(req.path.substring(1,req.path.length))
+  console.log(checkDate(req.path.substring(1,req.path.length)));
 });
 
 app.listen(12345);
