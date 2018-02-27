@@ -1,0 +1,28 @@
+{
+  "name": "timestamp",
+  "version": "1.0.0",
+  "description": "time Stamp API, given a date string or a unix time, the application will return both a datestring and a unix timestamp as a JSON object",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kev20006/timestamp.git"
+  },
+  "keywords": [
+    "API",
+    "Timestamp",
+    "FreeCodeCamp"
+  ],
+  "author": "Kev20006",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kev20006/timestamp/issues"
+  },
+  "homepage": "https://github.com/kev20006/timestamp#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "pug": "^2.0.0-rc.4"
+  }
+}
