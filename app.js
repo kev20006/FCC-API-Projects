@@ -17,7 +17,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('*',(req, res) => {
-  console.log(checkDate(req.path.substring(1,req.path.length)));
+  res.setHeader('Content-Type', 'application/json');
+  res.send(JSON.stringify(checkDate(req.path.substring(1,req.path.length))));
 });
 
 app.listen(12345);

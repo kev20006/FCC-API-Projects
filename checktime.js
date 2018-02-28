@@ -1,14 +1,19 @@
 let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-String.prototype.isNumber = function(){return /^\d+$/.test(this);}
+String.prototype.isNumber = ()=>{return /^\d+$/.test(this);}
 module.exports = (string) =>{
   console.log(string)
-  if(string.isNumber()){
+  if(!isNaN(string)){
     string= parseInt(string);
+    console.log(typeof string)
   }else{
-    string = string.replace("%20", " ")
+    string = string.split("%20").join(" ");
+    console.log(string)
   }
   var myDate = new Date(string);
-  return {natural: myDate.getDate() + " " + months[myDate.getMonth()] + " " + myDate.getFullYear(), unix: myDate.getTime()};
+  return {
+    natural: myDate.getDate() + " " + months[myDate.getMonth()] + " " + myDate.getFullYear(),
+    unix: myDate.getTime()
+  };
 
-}
+};
