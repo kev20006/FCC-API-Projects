@@ -3,6 +3,7 @@ var express = require('express');
 var path  = require('path');
 var app = express();
 var dates = require('./routes/dates');
+var port = process.env.PORT || 8080;
 
 //Setup the
 app.set('view engine', 'pug');
@@ -15,5 +16,5 @@ app.get('/', (req, res) => {
 });
 
 
-app.listen(12345);
-console.log("server listening on port 12345")
+app.listen(port);
+console.log("server listening on port: " & port)
