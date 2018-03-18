@@ -1,0 +1,26 @@
+html
+  head
+    title= title
+  body
+    h1 Dates
+    p This service will produce a JSON date and Unix time stamp for you
+    p Just add a date string or unix timestamp to the end of the URL to generate the required JSON. 
+    p Alternatively, you can fill in the from below and click submit
+    p You will receive the following information in your JSON response
+    ul
+      li natural - Is the date given in natural language i.e. 24 April 1986
+      li unix - Is the unix time of the given date  
+    div(id="Error Message")
+    input(id='userDate' type='date')/
+    button(type='submit' onclick="getData()") get me my data
+    
+  script.
+    function getData(){
+      if  (document.getElementById("userDate").value){
+        let dateURL = window.location.href + '/' + document.getElementById("userDate").value;
+        window.location.href = dateURL
+      }else{
+        document.getElementById("Error Message").innerHTML = "<p style='color:red;'>please select a date</p>"
+      }
+    
+    }

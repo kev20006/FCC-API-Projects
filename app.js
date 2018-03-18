@@ -2,24 +2,18 @@
 var express = require('express');
 var path  = require('path');
 var app = express();
-var checkDate = require("./checktime.js");
+var dates = require('./routes/dates');
 
 //Setup the
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, "Views"));
+app.use('/dates', dates);
 
-app.all("*", (req, res) =>{
-  req.next()
-})
 
 app.get('/', (req, res) => {
-  res.render('index', {title:"timeStamp",message:"Hello, this will be my timestamp"  });
+  res.render('index', {title:"Kevin's API Services" });
 });
 
-app.get('*',(req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify(checkDate(req.path.substring(1,req.path.length))));
-});
 
 app.listen(12345);
 console.log("server listening on port 12345")
